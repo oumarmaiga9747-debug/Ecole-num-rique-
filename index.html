@@ -2,13 +2,71 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Mon école numérique</title>
-      </head>
-      <body>
-        <h1>Bienvenue sur notre école numérique</h1>
-          <p>Apprenez avec des enseignants et l'intelligence artificielle.</p>
-          </body>
-          </html>
-          
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon École Numérique</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#17233c}
+header{background:#102b50;color:white;padding:20px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.logo{font-size:21px;font-weight:bold}
+nav a{color:white;text-decoration:none;margin:8px}
+.hero{padding:65px 22px;text-align:center;background:linear-gradient(135deg,#12345b,#1769aa);color:white}
+.hero h1{font-size:34px;margin:0 0 18px}
+.hero p{font-size:17px;line-height:1.6}
+.btn{display:inline-block;background:#f5b82e;color:#17233c;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:15px}
+section{padding:35px 20px;max-width:1000px;margin:auto}
+h2{text-align:center;color:#12345b}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;padding:22px;border-radius:12px;box-shadow:0 3px 12px #0001}
+.card h3{color:#1769aa}
+footer{text-align:center;background:#102b50;color:white;padding:25px}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">Mon École Numérique</div>
+<div>
+<a href="#accueil">Accueil</a>
+<a href="#formations">Formations</a>
+<a href="#apropos">À propos</a>
+</div>
+</nav>
+</header>
+
+<div class="hero" id="accueil">
+<h1>Bienvenue dans votre école numérique</h1>
+<p>Apprenez à votre rythme grâce à des enseignants qualifiés, des formateurs expérimentés et l'intelligence artificielle.</p>
+<a class="btn" href="#formations">Découvrir les formations</a>
+</div>
+
+<section id="apropos">
+<h2>Une nouvelle façon d'apprendre</h2>
+<p>Notre plateforme met en relation les apprenants, les enseignants et les formateurs dans un environnement d'apprentissage accessible en ligne.</p>
+</section>
+
+<section id="formations">
+<h2>Nos formations</h2>
+<div class="cards">
+<div class="card">
+<h3>Cours avec enseignants</h3>
+<p>Suivez des cours dispensés par des enseignants et formateurs.</p>
+</div>
+<div class="card">
+<h3>Apprentissage avec IA</h3>
+<p>Bénéficiez d'un accompagnement pédagogique assisté par intelligence artificielle.</p>
+</div>
+<div class="card">
+<h3>Formation à distance</h3>
+<p>Accédez à vos formations où que vous soyez.</p>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Mon École Numérique — Tous droits réservés.</p>
+</footer>
+</body>
+</html>
