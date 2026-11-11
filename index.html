@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#102b46">
 <title>CAW NUMÉRIQUE — Toujours apprendre</title>
 <style>
-:root{--navy:#102b46;--blue:#1769aa;--gold:#e6ad42;--ink:#182433;--muted:#657487;--bg:#f4f7fb;--white:#fff;--line:#e4eaf1;--green:#16845b}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}button,input{font:inherit}button{cursor:pointer}.topbar{background:var(--navy);color:#fff;padding:10px 5%;display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:12px}.topbar span:last-child{color:#d9e6f2}.header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:850;letter-spacing:.3px}.brandmark{width:42px;height:42px;border-radius:12px;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:900;font-size:18px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:2px}.links{display:flex;gap:22px;align-items:center}.links a{color:#35465a;text-decoration:none;font-size:14px;font-weight:650}.links a:hover{color:var(--blue)}.btn{border:0;border-radius:10px;padding:11px 16px;font-weight:750;background:var(--blue);color:#fff}.btn.secondary{background:#edf4fb;color:var(--navy)}.btn.gold{background:var(--gold);color:#17283a}.menu{display:none;background:#edf4fb;color:var(--navy);border:0;border-radius:9px;padding:9px 12px;font-size:20px}.hero{background:linear-gradient(120deg,#102b46 0%,#174c75 68%,#1c6792 100%);color:#fff;overflow:hidden}.hero-inner{max-width:1180px;margin:auto;padding:68px 22px 72px;display:grid;grid-template-columns:1.25fr .75fr;gap:35px;align-items:center}.eyebrow{color:#f4c76e;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:850}.hero h1{font-size:clamp(34px,5vw,57px);line-height:1.08;margin:14px 0 18px;max-width:700px}.hero p{color:#dce9f4;line-height:1.75;max-width:610px;font-size:16px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.hero .secondary{background:#ffffff18;color:white;border:1px solid #ffffff55}.hero-card{background:#fff;color:var(--ink);padding:24px;border-radius:20px;box-shadow:0 20px 50px #071b2b55;transform:rotate(1deg)}.hero-card h3{margin:0 0 5px;color:var(--navy)}.hero-card p{color:var(--muted);font-size:13px;margin:0 0 18px}.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#f1f6fb;border-radius:12px;padding:15px}.stat strong{display:block;color:var(--blue);font-size:23px}.stat span{font-size:11px;color:var(--muted)}.section{max-width:1180px;margin:auto;padding:54px 22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:23px}.section-head h2{margin:5px 0 0;color:var(--navy);font-size:29px}.section-head p{margin:7px 0 0;color:var(--muted);font-size:14px}.kicker{color:var(--blue);font-size:11px;letter-spacing:1.8px;font-weight:850;text-transform:uppercase}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.course,.feature,.portal{background:#fff;border:1px solid var(--line);border-radius:16px;padding:21px;box-shadow:0 5px 18px #16365308}.course-icon,.feature-icon{width:45px;height:45px;border-radius:13px;background:#eaf3fb;display:grid;place-items:center;font-size:22px;margin-bottom:15px}.course h3,.feature h3,.portal h3{margin:0 0 8px;color:var(--navy);font-size:17px}.course p,.feature p,.portal p{color:var(--muted);font-size:13px;line-height:1.65;margin:0 0 17px}.meta{display:flex;justify-content:space-between;color:#718096;font-size:11px;border-top:1px solid var(--line);padding-top:13px}.tag{display:inline-block;background:#eaf6f0;color:var(--green);font-size:10px;font-weight:800;padding:5px 8px;border-radius:30px;margin-bottom:10px}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.portals{background:#eaf1f7}.portal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.portal .btn{width:100%;margin-top:4px}.dictionary{background:#fff;border:1px solid var(--line);padding:24px;border-radius:18px}.searchrow{display:flex;gap:10px;margin:15px 0}.searchrow input{flex:1;min-width:0;border:1px solid #d7e0e9;border-radius:10px;padding:13px}.result{background:#f3f7fb;border-radius:10px;padding:14px;min-height:48px;color:#42546a;font-size:14px}.footer{background:#102b46;color:#dce8f3;padding:35px 22px;text-align:center}.footer strong{color:#fff}.footer p{font-size:12px;color:#aebfd0}.notice{font-size:11px;color:#738297;margin-top:12px}
-@media(max-width:760px){.links{display:none;position:absolute;top:68px;left:0;right:0;background:white;padding:18px 22px;box-shadow:0 12px 18px #102b4618;flex-direction:column;align-items:flex-start}.links.open{display:flex}.menu{display:block}.nav>.btn{display:none}.hero-inner{grid-template-columns:1fr;padding-top:48px}.hero-card{transform:none}.grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr 1fr}.portal-grid{grid-template-columns:1fr}.section{padding:42px 18px}.section-head{display:block}.topbar{font-size:10px}}
+:root{--navy:#102b46;--blue:#1769aa;--gold:#e6ad42;--ink:#182433;--muted:#657487;--bg:#f4f7fb;--white:#fff;--line:#e4eaf1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit;text-decoration:none}.topbar{background:var(--navy);color:#fff;font-size:13px;padding:8px 5%;text-align:center}.header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.nav{max-width:1160px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px;color:var(--navy);font-weight:850;font-size:20px;letter-spacing:.2px}.logo{width:42px;height:42px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900;border:2px solid var(--gold)}.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted);font-weight:700}.links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:650}.links a:hover{color:var(--blue)}.btn{display:inline-block;background:var(--blue);color:#fff;padding:11px 17px;border-radius:10px;font-weight:750;border:0}.btn.gold{background:var(--gold);color:#172638}.menu{display:none;background:none;border:0;font-size:25px;color:var(--navy)}
+main{max-width:1160px;margin:auto;padding:0 22px}.hero{margin:34px 0 26px;background:linear-gradient(120deg,#102b46,#1769aa);border-radius:24px;color:#fff;padding:54px 48px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;overflow:hidden}.eyebrow{color:#ffd77e;font-size:12px;font-weight:850;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.12;margin:12px 0 18px}.hero p{font-size:18px;color:#e3edf7;max-width:620px;margin:0 0 24px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero .btn{background:var(--gold);color:#172638}.btn.outline{background:transparent;border:1px solid #c7d9ea;color:#fff}.hero-art{min-height:220px;display:grid;place-items:center}.book{width:190px;height:205px;border-radius:18px;background:#fff;color:var(--navy);box-shadow:18px 18px 0 #0b2036;display:flex;flex-direction:column;justify-content:center;align-items:center;transform:rotate(5deg);font-size:48px}.book strong{font-size:17px;margin-top:8px}.book span{font-size:11px;letter-spacing:2px;color:var(--blue)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 54px}.stat{background:#fff;border:1px solid var(--line);padding:18px;border-radius:15px;text-align:center}.stat strong{display:block;color:var(--blue);font-size:20px}.stat span{color:var(--muted);font-size:13px}
+section{padding:12px 0 42px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.section-head h2{font-size:28px;color:var(--navy);margin:0}.section-head p{margin:3px 0 0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px;box-shadow:0 7px 22px #102b4608}.icon{width:46px;height:46px;border-radius:13px;background:#eaf3fb;display:grid;place-items:center;font-size:23px;margin-bottom:13px}.card h3{margin:0 0 7px;color:var(--navy);font-size:18px}.card p{margin:0;color:var(--muted);font-size:14px}.card a{display:inline-block;margin-top:14px;color:var(--blue);font-weight:750;font-size:14px}
+.callout{background:#fff8e8;border:1px solid #f2dfb8;border-radius:18px;padding:25px;display:flex;justify-content:space-between;align-items:center;gap:18px;margin:8px 0 48px}.callout h2{margin:0;color:var(--navy);font-size:22px}.callout p{margin:5px 0 0;color:var(--muted)}
+footer{background:var(--navy);color:#dce7f1;padding:30px 22px;margin-top:20px}.foot{max-width:1160px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot strong{color:#fff}.foot small{color:#b9c9d8}
+@media(max-width:760px){.links{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;padding:18px 22px;box-shadow:0 12px 18px #102b4618;flex-direction:column;align-items:stretch}.links.open{display:flex}.menu{display:block}.nav>.btn{display:none}.hero{grid-template-columns:1fr;padding:34px 25px}.hero-art{min-height:150px}.book{width:140px;height:150px;font-size:36px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.callout{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
-<div class="topbar"><span>PLATEFORME ÉDUCATIVE NUMÉRIQUE</span><span>Accessible partout • Apprendre à son rythme</span></div>
-<header class="header"><nav class="nav">
-<a class="brand" href="#accueil"><span class="brandmark">CN</span><span>CAW NUMÉRIQUE<small>TOUJOURS APPRENDRE</small></span></a>
-<div class="links" id="links"><a href="#accueil">Accueil</a><a href="#formations">Formations</a><a href="#services">Nos services</a><a href="#espaces">Espaces</a><a href="#dictionnaire">Dictionnaire</a></div>
-<button class="btn" onclick="document.querySelector('#espaces').scrollIntoView()">Accéder à la plateforme</button><button class="menu" onclick="document.querySelector('#links').classList.toggle('open')" aria-label="Ouvrir le menu">☰</button>
-</nav></header>
-<main>
-<section class="hero" id="accueil"><div class="hero-inner"><div>
-<div class="eyebrow">Le savoir à portée de main</div><h1>Apprenez aujourd’hui.<br>Construisez demain.</h1>
-<p>CAW NUMÉRIQUE est un espace d’apprentissage en ligne conçu pour rendre la formation accessible, accompagner les apprenants et valoriser les compétences.</p>
-<div class="hero-actions"><button class="btn gold" onclick="document.querySelector('#formations').scrollIntoView()">Découvrir les formations</button><button class="btn secondary" onclick="document.querySelector('#services').scrollIntoView()">Découvrir nos services</button></div>
-</div><aside class="hero-card"><h3>Votre progression commence ici</h3><p>Une plateforme pour apprendre, pratiquer et progresser.</p><div class="statgrid"><div class="stat"><strong>24/7</strong><span>Accès aux ressources</span></div><div class="stat"><strong>3</strong><span>Domaines de départ</span></div><div class="stat"><strong>À distance</strong><span>Apprentissage flexible</span></div><div class="stat"><strong>À votre rythme</strong><span>Parcours évolutif</span></div></div></aside>
-</div></section>
-<section class="section" id="formations"><div class="section-head"><div><div class="kicker">Apprendre et progresser</div><h2>Nos domaines de formation</h2><p>Des parcours conçus pour développer des compétences utiles.</p></div></div>
-<div class="grid">
-<article class="course"><span class="tag">Parcours de formation</span><div class="course-icon">💻</div><h3>Informatique et compétences numériques</h3><p>Découvrez les fondamentaux de l’informatique, les outils numériques et les usages responsables du digital.</p><div class="meta"><span>Cours et exercices</span><span>Débutant à avancé</span></div></article>
-<article class="course"><span class="tag">Parcours de formation</span><div class="course-icon">🤖</div><h3>Intelligence artificielle</h3><p>Comprenez l’IA, apprenez à dialoguer avec les outils intelligents et développez des méthodes de travail efficaces.</p><div class="meta"><span>Leçons pratiques</span><span>Progressif</span></div></article>
-<article class="course"><span class="tag">Parcours de formation</span><div class="course-icon">📈</div><h3>Entrepreneuriat et gestion</h3><p>Initiez-vous à la création d’activité, à la gestion de projet et aux notions essentielles de gestion.</p><div class="meta"><span>Études de cas</span><span>Débutant à avancé</span></div></article>
-</div><p class="notice">Catalogue de démonstration : les formations réelles seront ajoutées et administrées depuis l’espace de gestion.</p>
-</section>
-<section class="section" id="services"><div class="section-head"><div><div class="kicker">Un environnement complet</div><h2>Les outils de votre apprentissage</h2><p>Les fonctionnalités prévues pour accompagner chaque étape.</p></div></div>
-<div class="feature-grid">
-<article class="feature"><div class="feature-icon">🎓</div><h3>Cours structurés</h3><p>Modules, leçons, supports et exercices.</p></article>
-<article class="feature"><div class="feature-icon">🧠</div><h3>Assistant IA</h3><p>Un assistant pédagogique pour expliquer et orienter.</p></article>
-<article class="feature"><div class="feature-icon">📝</div><h3>Évaluations</h3><p>Quiz et exercices pour vérifier les acquis.</p></article>
-<article class="feature"><div class="feature-icon">🏅</div><h3>Attestations</h3><p>Valorisation des parcours et des résultats.</p></article>
-</div></section>
-<section class="portals" id="espaces"><div class="section"><div class="section-head"><div><div class="kicker">Accès par profil</div><h2>Les espaces de la plateforme</h2><p>Chaque profil disposera d’un environnement adapté à ses responsabilités.</p></div></div>
-<div class="portal-grid">
-<article class="portal"><div class="feature-icon">👨‍🎓</div><h3>Espace apprenant</h3><p>Suivre ses cours, consulter ses supports et retrouver ses évaluations.</p><button class="btn secondary" onclick="demo('Espace apprenant')">Découvrir l’espace</button></article>
-<article class="portal"><div class="feature-icon">👩‍🏫</div><h3>Espace formateur</h3><p>Préparer des cours, organiser les leçons et accompagner les apprenants.</p><button class="btn secondary" onclick="demo('Espace formateur')">Découvrir l’espace</button></article>
-<article class="portal"><div class="feature-icon">🛡️</div><h3>Administration</h3><p>Gérer les utilisateurs, les formations, les inscriptions et les abonnements.</p><button class="btn secondary" onclick="demo('Espace administration')">Découvrir l’espace</button></article>
-</div><p class="notice" id="demoMessage" aria-live="polite">Les espaces sécurisés seront activés après la connexion à la base de données.</p>
-</div></section>
-<section class="section" id="dictionnaire"><div class="section-head"><div><div class="kicker">Apprendre un mot</div><h2>Dictionnaire numérique</h2><p>Une première démonstration de recherche de notions informatiques.</p></div></div>
-<div class="dictionary"><strong>Rechercher une notion</strong><div class="searchrow"><input id="word" placeholder="Ex. : Internet, logiciel, algorithme…" onkeydown="if(event.key==='Enter')lookup()"><button class="btn" onclick="lookup()">Rechercher</button></div><div class="result" id="definition" aria-live="polite">Saisissez un terme pour afficher une définition de démonstration.</div></div>
-<p class="notice">Cette version contient quelques définitions d’exemple. Le dictionnaire complet sera enrichi ultérieurement.</p>
-</section>
+<div class="topbar">Une école ouverte à la connaissance, aux compétences et à l'avenir.</div>
+<header class="header">
+  <nav class="nav">
+    <a class="brand" href="#accueil"><span class="logo">CN</span><span>CAW NUMÉRIQUE<small>TOUJOURS APPRENDRE</small></span></a>
+    <button class="menu" aria-label="Ouvrir le menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+    <div class="links">
+      <a href="#accueil">Accueil</a><a href="#formations">Formations</a><a href="#services">Nos services</a><a href="#apropos">À propos</a>
+    </div>
+    <a class="btn" href="#formations">Découvrir les cours</a>
+  </nav>
+</header>
+<main id="accueil">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Apprendre • pratiquer • progresser</div>
+      <h1>Le savoir à portée de main.</h1>
+      <p>Apprenez aujourd'hui. Construisez demain. CAW NUMÉRIQUE vous accompagne dans votre parcours grâce aux formations, aux enseignants et aux outils numériques.</p>
+      <div class="hero-actions"><a class="btn" href="#formations">Découvrir les formations</a><a class="btn outline" href="#services">Découvrir nos services</a></div>
+    </div>
+    <div class="hero-art"><div class="book">✦<strong>CAW NUMÉRIQUE</strong><span>TOUJOURS APPRENDRE</span></div></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>À votre rythme</strong><span>Un apprentissage flexible</span></div>
+    <div class="stat"><strong>À distance</strong><span>Des ressources accessibles en ligne</span></div>
+    <div class="stat"><strong>Parcours évolutif</strong><span>Apprendre et progresser</span></div>
+  </div>
+  <section id="formations">
+    <div class="section-head"><div><h2>Nos domaines de formation</h2><p>Des bases essentielles pour développer vos compétences.</p></div></div>
+    <div class="grid">
+      <article class="card"><div class="icon">💻</div><h3>Informatique et compétences numériques</h3><p>Découvrez les fondamentaux de l'informatique, les outils numériques et les usages responsables du digital.</p></article>
+      <article class="card"><div class="icon">🤖</div><h3>Intelligence artificielle</h3><p>Comprenez l'IA, apprenez à dialoguer avec les outils intelligents et développez des méthodes de travail efficaces.</p></article>
+      <article class="card"><div class="icon">📊</div><h3>Entrepreneuriat et gestion</h3><p>Initiez-vous à la création d'activité, à la gestion de projet et aux notions essentielles de gestion.</p></article>
+    </div>
+  </section>
+  <section id="services">
+    <div class="section-head"><div><h2>Nos services</h2><p>Un environnement conçu pour accompagner chaque étape de l'apprentissage.</p></div></div>
+    <div class="grid">
+      <article class="card"><div class="icon">🎓</div><h3>Cours structurés</h3><p>Des modules, des leçons, des supports et des exercices pour apprendre progressivement.</p></article>
+      <article class="card"><div class="icon">🧑‍🏫</div><h3>Enseignants et formateurs</h3><p>Des espaces destinés à préparer les cours, organiser les leçons et accompagner les apprenants.</p></article>
+      <article class="card"><div class="icon">✨</div><h3>Assistant pédagogique IA</h3><p>Un assistant intelligent prévu pour expliquer les notions et orienter les apprenants. Service en cours de mise en place.</p></article>
+      <article class="card"><div class="icon">📝</div><h3>Évaluations</h3><p>Des quiz et exercices pour vérifier les acquis et suivre sa progression.</p></article>
+      <article class="card"><div class="icon">📖</div><h3>Dictionnaire numérique</h3><p>Recherchez un terme pour découvrir une définition et enrichir votre vocabulaire numérique.</p></article>
+      <article class="card"><div class="icon">🏅</div><h3>Attestations et progression</h3><p>Un espace prévu pour valoriser les parcours et les résultats des apprenants.</p></article>
+    </div>
+  </section>
+  <section id="apropos">
+    <div class="callout"><div><h2>Votre progression commence ici.</h2><p>CAW NUMÉRIQUE : une initiative dédiée à l'apprentissage et au développement des compétences.</p></div><a class="btn" href="admin.html">Espace administration</a></div>
+  </section>
 </main>
-<footer class="footer"><strong>CAW NUMÉRIQUE — TOUJOURS APPRENDRE</strong><p>Une initiative dédiée à l’apprentissage, à la connaissance et au développement des compétences.</p><p>© 2026 CAW NUMÉRIQUE. Tous droits réservés.</p></footer>
-<script>
-const definitions={
-"internet":"Internet est un réseau mondial qui relie des millions d’ordinateurs et d’appareils afin d’échanger des informations.",
-"logiciel":"Un logiciel est un ensemble de programmes et d’instructions permettant à un appareil d’effectuer des tâches.",
-"algorithme":"Un algorithme est une suite ordonnée d’étapes permettant de résoudre un problème ou d’accomplir une tâche.",
-"ordinateur":"Un ordinateur est un appareil électronique capable de traiter, stocker et restituer des informations.",
-"intelligence artificielle":"L’intelligence artificielle désigne des techniques permettant à des systèmes informatiques d’effectuer des tâches qui nécessitent habituellement certaines capacités humaines."
-};
-function lookup(){const q=document.getElementById('word').value.trim().toLowerCase();const out=document.getElementById('definition');if(!q){out.textContent='Saisissez un terme à rechercher.';return}out.textContent=definitions[q]||'Cette notion ne figure pas encore dans le petit dictionnaire de démonstration.'}
-function demo(name){document.getElementById('demoMessage').textContent=name+' : cet espace est présenté en aperçu. La connexion sécurisée et les fonctions réelles seront développées dans la prochaine étape.'}
-</script>
-</body></html>
+<footer><div class="foot"><div><strong>CAW NUMÉRIQUE</strong><br><small>TOUJOURS APPRENDRE</small></div><small>© 2026 CAW NUMÉRIQUE. Tous droits réservés.</small></div></footer>
+</body>
+</html>
