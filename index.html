@@ -68,5 +68,17 @@ footer{background:var(--navy);color:#dce7f1;padding:30px 22px;margin-top:20px}.f
   </section>
 </main>
 <footer><div class="foot"><div><strong>CAW NUMÉRIQUE</strong><br><small>TOUJOURS APPRENDRE</small></div><small>© 2026 CAW NUMÉRIQUE. Tous droits réservés.</small></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://tlfetzynlbkjbqjngyso.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_JwOaSPdH4ZOsdgF2HRgZHQ_40diUlXz";
+
+  const supabase = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+</script>
+
 </body>
 </html>
