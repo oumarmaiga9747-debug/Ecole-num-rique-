@@ -126,7 +126,7 @@ document.getElementById("signup-btn").addEventListener("click", async () => {
     options: {
       data: { full_name: name }
     }
-    }
+    
   });
 
   if (error) {
@@ -160,32 +160,6 @@ document.getElementById("login-btn").addEventListener("click", async () => {
   } else {
     message.textContent =
       "Connexion réussie ! Bienvenue sur CAW NUMÉRIQUE.";
-  }
-});
-  
-
-// Connexion d'un apprenant
-document.getElementById("login-btn").addEventListener("click", async () => {
-  const email = document.getElementById("login-email").value.trim();
-  const password = document.getElementById("login-password").value;
-  const message = document.getElementById("auth-message");
-
-  if (!email || !password) {
-    message.textContent = "Veuillez saisir votre e-mail et votre mot de passe.";
-    return;
-  }
-
-  message.textContent = "Connexion en cours...";
-
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password
-  });
-
-  if (error) {
-    message.textContent = error.message;
-  } else {
-    message.textContent = "Connexion réussie ! Bienvenue sur CAW NUMÉRIQUE.";
   }
 });</script>
 
