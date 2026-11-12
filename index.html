@@ -69,7 +69,30 @@ footer{background:var(--navy);color:#dce7f1;padding:30px 22px;margin-top:20px}.f
 </main>
 <footer><div class="foot"><div><strong>CAW NUMÉRIQUE</strong><br><small>TOUJOURS APPRENDRE</small></div><small>© 2026 CAW NUMÉRIQUE. Tous droits réservés.</small></div></footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><section id="auth-section" class="section">
+  <h2>Accéder à CAW NUMÉRIQUE</h2>
+
+  <div class="auth-box">
+    <h3>Créer un compte</h3>
+
+    <input type="text" id="signup-name" placeholder="Nom complet">
+    <input type="email" id="signup-email" placeholder="Adresse e-mail">
+    <input type="password" id="signup-password" placeholder="Mot de passe (8 caractères minimum)">
+
+    <button type="button" id="signup-btn">Créer mon compte</button>
+
+    <hr>
+
+    <h3>Déjà inscrit ?</h3>
+
+    <input type="email" id="login-email" placeholder="Adresse e-mail">
+    <input type="password" id="login-password" placeholder="Mot de passe">
+
+    <button type="button" id="login-btn">Me connecter</button>
+
+    <p id="auth-message"></p>
+  </div>
+</section>
 <script>
   const SUPABASE_URL = "https://tlfetzynlbkjbqjngyso.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_JwOaSPdH4ZOsdgF2HRgZHQ_40diUlXz";
@@ -78,7 +101,64 @@ footer{background:var(--navy);color:#dce7f1;padding:30px 22px;margin-top:20px}.f
     SUPABASE_URL,
     SUPABASE_ANON_KEY
   );
-</script>
+// Inscription d'un nouvel apprenant
+document.getElementById("signup-btn").addEventListener("click", async () => {
+  const name = document.getElementById("signup-name").value.trim();
+  const email = document.getElementById("signup-email").value.trim();
+  const password = document.getElementById("signup-password").value;
+  const message = document.getElementById("auth-message");
+
+  if (!name || !email || !password) {
+    message.textContent = "Veuillez remplir tous les champs.";
+    return;
+  }
+
+  if (password.length < 8) {
+    message.textContent = "Le mot de passe doit contenir au moins 8 caractères.";
+    return;
+  }
+
+  message.textContent = "Création du compte en cours...";
+
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { full_name: name }
+    }
+  });
+
+  if (error) {
+    message.textContent = error.message;
+  } else {
+    message.textContent = "Inscription réussie ! Vérifiez votre boîte e-mail pour confirmer votre adresse.";
+  }
+});
+
+// Connexion d'un apprenant
+document.getElementById("login-btn").addEventListener("click", async () => {
+  const email = document.getElementById("login-email").value.trim();
+  const password = document.getElementById("login-password").value;
+  const message = document.getElementById("auth-message");
+
+  if (!email || !password) {
+    message.textContent = "Veuillez saisir votre e-mail et votre mot de passe.";
+    return;
+  }
+
+  message.textContent = "Connexion en cours...";
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    message.textContent = error.message;
+  } else {
+    message.textContent = "Connexion réussie ! Bienvenue sur CAW NUMÉRIQUE.";
+  }
+});</script>
 
 </body>
 </html>
